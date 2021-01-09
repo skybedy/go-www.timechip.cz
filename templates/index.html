@@ -12,12 +12,9 @@
     </div>
 </div>
 
-<div class="container content">
-
-<div class="underbar"><div class="container"><h1> {{ .Title }}</h1></div></div>
-
 
 <div class="container content">
+    
     <div class="row heading">
         <div class="col-xs-12">
             <h2>Co se děje u nás...</h2>
@@ -26,6 +23,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="row">
+                
                 <div class="col-lg-3">
                     <div class="thumbnail boxwrapper">
                         <div class="list-group indexbox our-news">
@@ -43,27 +41,10 @@
                                 </a>
                             {{end}}
                         </div>
-                            {{range .Zavody}}
-
-
-                                <a style="height:82px" class="list-group-item" target="_blank" href="" class="clearfix">
-                                    <div class="race-type-icon-wrapper">
-                                        <img src="./img/race-type-icons/" />
-                                    </div>
-                                    <h3>{{.DatumZavodu}}</h3>
-                                    <p>{{.NazevZavodu}}</p>
-
-                                </a>
-                                {{end}}
-
-                        </div>
-
-
-
-
-
                     </div>
                 </div>
+                
+                
                 <div class="col-lg-6 visible-lg">
                     <div class="thumbnail homepage-imagewrapper">
                         <div class="thumbnail">
@@ -82,24 +63,11 @@
                                 <li><img src="/static/img/zelezny-prajzak.jpg" /></li>
                                 <li><img src="/static/img/madeja-skialp-bila.jpg" /></li>
                                 <li><img src="/static/img/jesenicka-70.jpg" /></li>
-                                <li><img src="./img/orlice-cup.jpg" /></li>
-                                <li><img src="./img/festina-24h.jpg" /></li>
-                                <li><img src="./img/valachiarun.jpg" /></li>
-                                <li><img src="./img/chuchle.jpg" /></li>
-                                <li><img src="./img/belsky-okruh.jpg" /></li>
-                                <li><img src="./img/dobroslavicky-jarni-duatlon.jpg" /></li>
-                                <li><img src="./img/perun.jpg" /></li>
-                                <li><img src="./img/odrivousuv-pohar.jpg" /></li>
-                                <li><img src="./img/machacsky-pohodar.jpg" /></li>
-                                <li><img src="./img/auto-enge-triatlon.jpg" /></li>
-                                <li><img src="./img/valachiarun-vsetin.jpg" /></li>
-                                <li><img src="./img/zelezny-prajzak.jpg" /></li>
-                                <li><img src="./img/madeja-skialp-bila.jpg" /></li>
-                                <li><img src="./img/jesenicka-70.jpg" /></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-3">
                     <div class="thumbnail boxwrapper">
                         <div class="list-group indexbox our-news">
@@ -123,16 +91,4 @@
         </div>
     </div>
 </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
 {{template "footer"}}

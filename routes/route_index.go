@@ -2,7 +2,6 @@ package routes
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -44,7 +43,7 @@ func NejblizsiZavody() map[string][]Zavod {
 
 	//var zavody []Zavod
 	err = json.Unmarshal(body, &xyz)
-	fmt.Println(xyz["nejblizsi_zavody"])
+	//fmt.Println(xyz["nejblizsi_zavody"])
 
 	return xyz
 }
