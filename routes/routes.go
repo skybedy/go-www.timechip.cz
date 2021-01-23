@@ -8,8 +8,9 @@ import (
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
-	router.HandleFunc("/", index).Methods("GET")
-	router.HandleFunc("/zavody/{race-year}", index).Methods("GET")
+	router.HandleFunc("/", Index).Methods("GET")
+	router.HandleFunc("/zavody/{race-year}", Zavody).Methods("GET")
+	router.HandleFunc("/vysledky/{race-year}", Vysledky).Methods("GET")
 
 	staticFileDirectory := http.Dir("./static/")
 	// Declare the handler, that routes requests to their respective filename.

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<title>Výsledkový systém a čipová časomíra TimeChip | {{ .Title }}</title>
+{{template "header"}}
+</head>
+{{template "navbar"}}
+
+<div class="underbar">
+    <div class="container">
+        <h1> {{ .Title }}</h1>
+    </div>
+</div>
+
+
+<div class="container content">
+    <table class="table table-hover">
+        <!--<thead>
+        <tr class="header">
+            <td>Název</td>
+            <td>Místo</td>
+            <td>Datum</td>
+            <td>Sport</td>
+        </tr>
+        </thead>-->
+        {{range .Data}}
+            <tr>
+                <td>{{.nazev_zavodu}}</td>
+                <td>{{.misto_zavodu}}</td>
+                
+                {{if .datum_zavodu_konec}}
+                    <td>{{.den_zavodu}} - {{.datum_zavodu_konec}}</td>
+                {{else}}
+                    <td>{{.datum}}</td>
+                {{end}}
+                <td>{{.typ_zavodu}}</td>
+                
+                {{if .web}}
+                    <td><a target="_blank" href="http://{{.web}}">WWW</a></td>
+                {{else}}
+                    <td>&nbsp;</td>
+                {{end}}
+                
+                {{if .prihlasky}}
+                    <td><a target="_blank" href="http://entry.timechip.cz">Přihlášky</a></td>
+                {{else}}
+                    <td>&nbsp;</td>
+                {{end}}
+                
+                {{if .nove_vysledky}}
+                    <td><a target="_blank" href="http://vysledky.timechip.cz/#{{.year}}/{{.id_zavodu}}">Výsledky</a></td>
+                {{else}}
+                    <td>&nbsp;</td>
+                {{end}}
+            </tr>
+            {{end}}
+    </table>
+
+    
+</div>
+{{template "footer"}}
