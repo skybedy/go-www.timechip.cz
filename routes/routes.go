@@ -1,6 +1,11 @@
 package routes
 
-/*
+import (
+	"net/http"
+
+	"github.com/gorilla/mux"
+)
+
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
 	router.HandleFunc("/", Index).Methods("GET")
@@ -22,4 +27,3 @@ func NewRouter() *mux.Router {
 
 	return router
 }
-*/
