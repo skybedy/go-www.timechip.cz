@@ -8,9 +8,9 @@ import (
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
-	cssHandler := http.FileServer(http.Dir("./css/"))
+	//cssHandler := http.FileServer(http.Dir("./css/"))
 
-	http.Handle("/css/", http.StripPrefix("/css/", cssHandler))
+	//http.Handle("/css/", http.StripPrefix("/css/", cssHandler))
 
 	router.HandleFunc("/", Index).Methods("GET")
 	router.HandleFunc("/zavody/{race-year}", Zavody).Methods("GET")
@@ -28,6 +28,11 @@ func NewRouter() *mux.Router {
 	// The "PathPrefix" method acts as a matcher, and matches all routes starting
 	// with "/assets/", instead of the absolute route itself
 	router.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
+
+	fs := http.FileServer(http.Dir("/static"))
+
+	router.Handle("/css/", fs)
+	router.Handle("/js/", fs)
 
 	return router
 }
