@@ -8,9 +8,9 @@ import (
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
-	cssHandler := http.FileServer(http.Dir("./static/css/"))
+	cssHandler := http.FileServer(http.Dir("./css/"))
 
-	http.Handle("/static/css/", http.StripPrefix("/static/css/", cssHandler))
+	http.Handle("/css/", http.StripPrefix("/css/", cssHandler))
 
 	router.HandleFunc("/", Index).Methods("GET")
 	router.HandleFunc("/zavody/{race-year}", Zavody).Methods("GET")
