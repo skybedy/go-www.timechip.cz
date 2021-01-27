@@ -8,14 +8,9 @@ import (
 
 func NewRouter() *mux.Router {
 	router := mux.NewRouter()
-	//cssHandler := http.FileServer(http.Dir("./css/"))
-
-	//http.Handle("/css/", http.StripPrefix("/css/", cssHandler))
-
 	router.HandleFunc("/", Index).Methods("GET")
 	router.HandleFunc("/zavody/{race-year}", Zavody).Methods("GET")
 	router.HandleFunc("/vysledky/{race-year}", Vysledky).Methods("GET")
-
 	staticFileDirectory := http.Dir("/var/www/timechip.cz/go-www.timechip.cz/static")
 	// Declare the handler, that routes requests to their respective filename.
 	// The fileserver is wrapped in the `stripPrefix` method, because we want to
@@ -28,11 +23,6 @@ func NewRouter() *mux.Router {
 	// The "PathPrefix" method acts as a matcher, and matches all routes starting
 	// with "/assets/", instead of the absolute route itself
 	router.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
-
-	//fs := http.FileServer(http.Dir("/var/www/timechip.cz/go-www.timechip.cz/static"))
-
-	//router.PathPrefix("/css/").Handler(fs)
-	//router.PathPrefix("/js/").Handler(fs)
 
 	return router
 }
