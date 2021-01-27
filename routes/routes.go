@@ -29,10 +29,10 @@ func NewRouter() *mux.Router {
 	// with "/assets/", instead of the absolute route itself
 	router.PathPrefix("/static/").Handler(staticFileHandler).Methods("GET")
 
-	fs := http.FileServer(http.Dir("/var/www/timechip.cz/go-www.timechip.cz/static"))
+	//fs := http.FileServer(http.Dir("/var/www/timechip.cz/go-www.timechip.cz/static"))
 
-	router.PathPrefix("/css/").Handler(fs)
-	router.PathPrefix("/js/").Handler(fs)
+	//router.PathPrefix("/css/").Handler(fs)
+	//router.PathPrefix("/js/").Handler(fs)
 
 	return router
 }
